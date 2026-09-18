@@ -6,11 +6,14 @@
 
 ## 安装
 
-```powershell
-Copy-Item -Recurse .\codex\three-tier-system "$env:USERPROFILE\.codex\skills\"
+把下面这段话交给 Codex：
+
+```text
+请安装这个 GitHub 子目录中的 Skill，只安装 Codex 版。安装完成后验证 Skill 可被发现，并告诉我如何触发它：
+https://github.com/GURA948/three-tier-agent-skills/tree/main/codex/three-tier-system
 ```
 
-安装或更新后重启 Codex 或新开任务。Skill 支持自动发现，也可显式使用 `$three-tier-system`。
+Codex 可以从其他 GitHub 仓库安装指定 Skill，无需下载 ZIP 或安装同仓库的 ZCode 版。安装或更新后重启 Codex 或新开任务。Skill 支持自动发现，也可显式使用 `$three-tier-system`。
 
 ## 要求
 
