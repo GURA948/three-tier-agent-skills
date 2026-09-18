@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python scripts/validate_release.py
+
+  zcode-profile-sync:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install profile to an isolated target
+        shell: powershell
+        run: |
+          $target = Join-Path $env:RUNNER_TEMP "employee.md"
+          .\zcode\three-tier-system\tools\sync-employee-profile.ps1 -Target $target
+          .\zcode\three-tier-system\tools\sync-employee-profile.ps1 -Target $target -Check

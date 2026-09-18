@@ -1,0 +1,6 @@
+interface:
+  display_name: "三级体系"
+  short_description: "让经理澄清需求、约束 Codex 员工，并控制测试审查成本与最终验收"
+  default_prompt: "使用 $three-tier-system 建立用户—经理—员工三级协作，并由当前任务担任经理。"
+policy:
+  allow_implicit_invocation: true
